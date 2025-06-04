@@ -13,6 +13,7 @@ from src.config import SearchEngine, SELECTED_SEARCH_ENGINE
 from src.tools.tavily_search.tavily_search_results_with_images import (
     TavilySearchResultsWithImages,
 )
+from src.tools.zhipu import ZhipuWebSearch
 
 from src.tools.decorators import create_logged_tool
 
@@ -23,6 +24,7 @@ LoggedTavilySearch = create_logged_tool(TavilySearchResultsWithImages)
 LoggedDuckDuckGoSearch = create_logged_tool(DuckDuckGoSearchResults)
 LoggedBraveSearch = create_logged_tool(BraveSearch)
 LoggedArxivSearch = create_logged_tool(ArxivQueryRun)
+LoggedZhipuSearch = create_logged_tool(ZhipuWebSearch)
 
 
 # Get the selected search tool
@@ -53,6 +55,11 @@ def get_web_search_tool(max_search_results: int):
                 load_max_docs=max_search_results,
                 load_all_available_meta=True,
             ),
+        )
+    elif SELECTED_SEARCH_ENGINE == SearchEngine.ZHIPU.value:
+        return LoggedZhipuSearch(
+            name="web_search",
+            max_results=max_search_results,
         )
     else:
         raise ValueError(f"Unsupported search engine: {SELECTED_SEARCH_ENGINE}")
