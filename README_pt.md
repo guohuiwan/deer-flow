@@ -163,6 +163,11 @@ DeerFlow suporta múltiplos mecanismos de busca que podem ser configurados no se
   - Requer `BRAVE_SEARCH_API_KEY` no seu arquivo `.env`
   - Inscreva-se em: https://brave.com/search/api/
 
+- **Zhipu WebSearch**: API de busca da Zhipu AI
+
+  - Requer `ZHIPU_WEBSEARCH_API_KEY` no seu arquivo `.env`
+  - Veja: https://open.bigmodel.cn/dev/howuse/websearch
+
 - **Arxiv**: Busca de artigos científicos para pesquisa acadêmica
   - Não requer chave API
   - Especializado em artigos científicos e acadêmicos
@@ -170,7 +175,7 @@ DeerFlow suporta múltiplos mecanismos de busca que podem ser configurados no se
 Para configurar o seu mecanismo preferido, defina a variável `SEARCH_API` no seu arquivo:
 
 ```bash
-# Escolha uma: tavily, duckduckgo, brave_search, arxiv
+# Escolha uma: tavily, duckduckgo, brave_search, zhipu, arxiv
 SEARCH_API=tavily
 ```
 

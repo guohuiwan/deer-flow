@@ -156,6 +156,11 @@ DeerFlow 支持多种搜索引擎，可以在`.env`文件中通过`SEARCH_API`�
   - 需要在`.env`文件中设置`BRAVE_SEARCH_API_KEY`
   - 注册地址：https://brave.com/search/api/
 
+- **智谱 WebSearch**：来自智谱 AI 的中文搜索 API
+
+  - 需要在`.env`文件中设置`ZHIPU_WEBSEARCH_API_KEY`
+  - 参考：https://open.bigmodel.cn/dev/howuse/websearch
+
 - **Arxiv**：用于学术研究的科学论文搜索
   - 无需 API 密钥
   - 专为科学和学术论文设计
@@ -163,7 +168,7 @@ DeerFlow 支持多种搜索引擎，可以在`.env`文件中通过`SEARCH_API`�
 要配置您首选的搜索引擎，请在`.env`文件中设置`SEARCH_API`变量：
 
 ```bash
-# 选择一个：tavily, duckduckgo, brave_search, arxiv
+# 选择一个：tavily, duckduckgo, brave_search, zhipu, arxiv
 SEARCH_API=tavily
 ```
 
